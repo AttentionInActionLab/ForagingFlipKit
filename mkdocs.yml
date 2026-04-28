@@ -1,6 +1,9 @@
 site_name: ForagingFlipKit
 theme:
   name: material
-  
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.action.edit  
 nav:
   - Home: index.md
