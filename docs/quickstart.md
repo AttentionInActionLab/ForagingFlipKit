@@ -12,7 +12,7 @@ You can run your first experiment in under a minute:
 
 ### 1. Download the project
 
-* Go to the GitHub repository
+* Go to the GitHub repository: <https://github.com/AttentionInActionLab/ForagingFlipKit>
 * Click the green **Code** button
 * Select **Download ZIP**
 
@@ -28,7 +28,7 @@ Unzip the downloaded file to any location on your computer.
 
 Open the following file in your browser:
 
-```text id="d0l3s7"
+```
 start-experiment.html
 ```
 
@@ -52,7 +52,7 @@ Experiments are configured and executed through simple files — just open them 
 
 ## 📁 Project Structure (simplified)
 
-```text id="x9h2kd"
+```
 project/
 ├── start-experiment.html   # Entry point (runs the experiment)
 ├── config.js               # Main configuration file
