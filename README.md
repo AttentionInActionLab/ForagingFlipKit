@@ -1,3 +1,1 @@
-Finde the documentation here:
-
-https://attentioninactionlab.github.io/ForagingFlipKit/
+Find the documentation here: https://attentioninactionlab.github.io/ForagingFlipKit/
