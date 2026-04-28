@@ -4,6 +4,10 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - content.action.edit  
+    - content.action.edit
+  palette:
+    - scheme: default
+      primary: teal
+      accent: indigo
 nav:
   - Home: index.md
