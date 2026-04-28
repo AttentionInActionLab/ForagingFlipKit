@@ -12,3 +12,4 @@ theme:
       accent: indigo
 nav:
   - Home: index.md
+  - Quick Start: quickstart.md
