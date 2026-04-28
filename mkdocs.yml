@@ -1,0 +1,6 @@
+site_name: ForagingFlipKit
+theme:
+  name: material
+  
+nav:
+  - Home: index.md

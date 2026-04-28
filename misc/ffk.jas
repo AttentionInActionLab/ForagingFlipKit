@@ -1,0 +1,27 @@
+{
+    "version": "3",
+    "data": {
+        "uuid": "537cfff1-de92-1d80-264c-6b589e82f6de",
+        "title": "Foraging Task",
+        "description": "No description added.",
+        "groupStudy": false,
+        "linearStudy": false,
+        "allowPreview": false,
+        "dirName": "ffk",
+        "comments": "",
+        "jsonData": "",
+        "endRedirectUrl": "",
+        "studyEntryMsg": null,
+        "componentList": [
+            {
+                "uuid": "dea21111-a966-5b24-9f15-a89fefa3f711",
+                "title": "Experiment",
+                "htmlFilePath": "start-experiment.html",
+                "reloadable": true,
+                "active": true,
+                "comments": "",
+                "jsonData": null
+            }
+        ]
+    }
+}

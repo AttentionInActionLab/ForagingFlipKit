@@ -1,0 +1,77 @@
+This project bundles third-party libraries.
+
+All third-party libraries remain under their respective licenses.
+
+---
+
+Library: delay
+License: MIT
+Source: https://github.com/sindresorhus/delay
+
+---
+
+Library: fclone
+License: MIT
+
+---
+
+Library: howler
+License: MIT
+Source: https://github.com/goldfire/howler.js
+
+---
+
+Library: jspsych
+License: MIT
+Source: https://www.jspsych.org/
+
+---
+
+Library: lodash.clonedeep
+Library: lodash.has
+Library: lodash.isequal
+License: MIT
+Source: https://lodash.com/
+
+---
+
+Library: popmotion
+License: MIT
+Source: https://popmotion.io/
+
+---
+
+Library: core-js
+License: MIT
+Source: https://github.com/zloirock/core-js
+
+Note: core-js is a widely used polyfill library. Please consider supporting the author:
+https://opencollective.com/core-js
+
+---
+
+Library: regenerator-runtime
+License: MIT
+Source: https://github.com/facebook/regenerator
+
+---
+
+This project includes additional transitive dependencies of the libraries listed above.
+All are under permissive open-source licenses (MIT, ISC, BSD, Apache-2.0, or equivalent).
+
+---
+
+Full license texts for all MIT-licensed components:
+
+---
+
+MIT License
+
+Copyright (c) <various authors>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
