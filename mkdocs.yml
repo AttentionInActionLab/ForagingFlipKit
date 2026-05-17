@@ -1,4 +1,6 @@
-site_name: ForagingFlipKit
+site_name: ForagingFlipKit Documentation
+repo_url: https://github.com/AttentionInActionLab/ForagingFlipKit
+repo_name: ForagingFlipKit
 theme:
   name: material
   logo: assets/logo.png
