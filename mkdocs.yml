@@ -13,4 +13,7 @@ theme:
 nav:
   - Home: index.md
   - Quick Start: quickstart.md
-  - Configuration Entries: configentries.md
+  - Config Entries: configentries.md
+  - Experimental Design: design.md
+  - Time Limits: timelimits.md
+  - Audio: audio.md

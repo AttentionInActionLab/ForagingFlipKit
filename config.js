@@ -9,10 +9,11 @@ window.config = {
     ],
     "indicate_points": "both",
     "point_indicator_html": "<div id='point-indicator-html' class='point-indicator'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>%%</font></div>",
-    "points_display_html": "<div id='points-display-html' class='points-display'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Punkte: %% </font></div>",
-    "next_patch_click_html": "<div id='next-patch-click-html' class='next-click' style='z-index: 99999'><font size='+4' face='Comic Sans MS' color='#FFFFFF' style='position:absolute; left:-40px'>Weiter!!!!</font></div>",
-    "background_color": "#000000"
+    "points_display_html": "<div id='points-display-html' class='points-display'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Points: %% </font></div>",
+    "next_patch_click_html": "<div id='next-patch-click-html' class='next-click' style='z-index: 99999'><font size='+4' face='Comic Sans MS' color='#FFFFFF' style='position:absolute; left:-40px'>Next</font></div>",
+"countdown_html":   "<div id='countdown-html' class='countdown-display' style='left: 700px!'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Time left: %%s</font></div>",
   },
+  
   "points": {
     "max_points": 20
   },
@@ -30,32 +31,32 @@ window.config = {
     "vjitter": 40,
     "hoffset": 45,
     "voffset": 45,
-    "on_used_up": "nothing",
-    "on_patch_done": "reset"
   },
   "animation": {
-    "speed": 30
+    "speed":30
   },
-  "patches": [
+  "patch_types": [
     {
       "id": "A",
-      "name": "OnlyConditionA",
+      "name": "ConditionA",
       "background_color": "#0A00AA",
       "travel_time": 1000,
+      "timeout": 5000,
       "intro": "<p>Welcome to condition A!</p>",
       "elements": [
         {
-          "type": "target",
+          "role": "target",
           "amount": 25,
           "points": 1,
           "images": [
             "disk-green.svg",
             "disk-yellow.svg",
           ],
-          "collectible": true
+          "collectible": true,
+          "trial_ends_when_all_collected": true
         },
         {
-          "type": "distractor",
+          "role": "distractor",
           "amount": 25,
           "points": -5,
           "images": [
@@ -68,24 +69,25 @@ window.config = {
     },
     {
       "id": "B",
-      "name": "OnlyConditionB",
+      "name": "ConditionB",
       "intro": "<p>Welcome to condition B!</p>",
       "background_color": "#0AAA00",
       "travel_time": 1500,
       "intro": "",
       "elements": [
         {
-          "type": "target",
+          "role": "target",
           "amount": 25,
           "points": 2,
           "images": [
             "disk-blue.svg",
             "disk-red.svg"
           ],
-          "collectible": true
+          "collectible": true,
+          "trial_ends_when_all_collected": true
         },
         {
-          "type": "distractor",
+          "role": "distractor",
           "amount": 25,
           "points": -20,
           "images": [
@@ -99,7 +101,7 @@ window.config = {
   ],
   "patch_repetitions": 1000,
   "blocks": {
-    "enabled": false,
+    "enabled": true,
     "sequences": [
       "ABAB",
       "BABA"
@@ -107,14 +109,12 @@ window.config = {
     "selection_method": "participant",
     "show_condition_intro": "never"
   },
-  "consent": {
-    "show_consent": false,
-    "show_instructions": true,
-    "show": true,
-    "instructions": true
-  },
   "data": {
     "mode": "offline"
   },
-  "design_type": "blocked"
+  "pre_experiment": {
+    "skip_all" : false,
+    "consent": true,
+    "instructions": true,
+  }
 };
