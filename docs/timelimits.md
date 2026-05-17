@@ -31,9 +31,9 @@ If you want to display a countdown to the participant, you add a ``countdown_htm
     ],
     "countdown_html":
       "<div id='countdown-html' class='countdown-display' style='left: 700px!'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Time left: %% </font></div>",
-    /* Here might be more entries, such as
+      /* Here might be more entries, such as
        indicate_points, points_display_html,
        next_patch_click_html, ... */
   },
-  ```
+```
 
