@@ -1,4 +1,5 @@
-![AiA Logo](assets/logo-white-bg.png)
+<img src="assets/logo-white-bg.png" width="100">
+
 # The ForagingFlipKit Documentation
 
 ... is heavily under construction. Here is brief overview of what's already there (and what's missing):
