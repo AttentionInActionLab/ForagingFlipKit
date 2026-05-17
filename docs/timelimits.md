@@ -20,12 +20,11 @@ In ``config.js``, where the patch types are defined, you can add a ``timeout`` w
                    of elements would be */]
     }
   ],
-
 ```
 If you want to display a countdown to the participant, you add a ``countdown_html`` entry to the general patch definition:
 
 ```javascript
-"patch": {
+  "patch": {
     "size": [
       1920,
       1080
