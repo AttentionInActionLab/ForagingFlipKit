@@ -72,7 +72,7 @@ project/
 
 * **core/**
   → Contains the framework logic
-  → You typically **do not need to modify anything here**
+  → You **do not need to modify anything here**
 
 * **stimuli/**
   → Place your experiment images here
@@ -96,7 +96,7 @@ The simplest workflow:
 3. Replace or add images in the `stimuli/` folder
 4. Open `start-experiment.html` in your browser
 
-👉 That’s it — no build step required. Just refresh the page after changes.
+That’s it — no build step required. Just refresh the page after changes.
 
 ---
 
@@ -116,4 +116,4 @@ The simplest workflow:
 
 ---
 
-Enjoy experimenting 🎉
+Enjoy experimenting!
