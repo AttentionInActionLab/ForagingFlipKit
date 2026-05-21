@@ -2,9 +2,9 @@
 
 This document provides a concise overview of common experimental designs and how to think about implementing them with ForagingFlipKit. It is intended as a reference when planning and configuring new experiments (e.g., via `config.js` and the `stimuli/` directory).
 
-## Purpose
-## (1) Understand the design options (within-, between-, mixed designs, blocks, conditions, counterbalancing, etc.), and
-## (2) translate those options into a ForagingFlipKit configuration (i.e., into config.js, plus organizing stimuli).
+### Purpose
+(1) Understand the design options (within-, between-, mixed designs, blocks, conditions, counterbalancing, etc.), and
+(2) translate those options into a ForagingFlipKit configuration (i.e., into config.js, plus organizing stimuli).
 
 **1. Core Concepts: What you can vary in an experiment**
 When designing a study, think in terms of factors and levels:
