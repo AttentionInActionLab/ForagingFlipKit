@@ -41,7 +41,6 @@ window.config = {
       "name": "ConditionA",
       "background_color": "#0A00AA",
       "travel_time": 1000,
-      "timeout": 5000,
       "intro": "<p>Welcome to condition A!</p>",
       "elements": [
         {
@@ -72,13 +71,13 @@ window.config = {
       "name": "ConditionB",
       "intro": "<p>Welcome to condition B!</p>",
       "background_color": "#0AAA00",
-      "travel_time": 1500,
+      "travel_time": 1000,
       "intro": "",
       "elements": [
         {
           "role": "target",
           "amount": 25,
-          "points": 2,
+          "points": 1,
           "images": [
             "disk-blue.svg",
             "disk-red.svg"
@@ -89,7 +88,7 @@ window.config = {
         {
           "role": "distractor",
           "amount": 25,
-          "points": -20,
+          "points": -5,
           "images": [
             "disk-yellow.svg",
             "disk-green.svg"
