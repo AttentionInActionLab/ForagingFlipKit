@@ -4,8 +4,7 @@ This file documents the entries in the config file, explaning what they mean and
 
 ---
 
-## fullscreen
-###  ``fullscreen_mode``
+### fullscreen
 * true: Shows the fullscreen dialog, after consent and instruction screens
 * false: Disables the fullscreen dialog.
 
@@ -13,16 +12,15 @@ This file documents the entries in the config file, explaning what they mean and
 ### ``size``
 * ``[X, Y]``: ``X`` is the width and ``Y`` is the height; This is the reference resolution. The real resolution might differ as the display is always scaled to the full screen size
 ### ``point_indicator_html``
-* An string with an HTML div with id='point-indicator-html' class='point-indicator' that contains placeholder ``%%``, which is replaced by the points of the clicked item. See default config / examples.
+* A string that contains placeholder ``%%``, which is replaced by the points of the clicked item. See default config / examples.
 * ``null`` disables the display.
 ### ``points-display-html``
-* An string with an HTML div with id='point-display-html' class='points-display' that contains placeholder ``%%``, which is replaced by the current total of points. See default config / examples.
-* !!! warning
-   Due to bug the only way to disable the points display is to keep the HTML string (as in the default / examples) but delete the placeholder ``XX`` 
+* A string that contains placeholder ``%%``, which is replaced by the current total of points. See default config / examples.
+
 ### ``next-patch-click-html``
-* An string with an HTML div with id='next-patch-click-html' class='next-click' that contains HTML/Text for a link that leads to the next patch. See default config / examples.
+* A string that contains HTML/Text for a link that leads to the next patch. See default config / examples.
 ### ``countdown-html``
-* An string with an HTML div with id='countdown-html' class='countdown-display' that contains placeholder ``%%`` which will be replaced with the remaining time in seconds. See [Time Limits](timelimits.md) for how to use the countdown.
+* A string that contains placeholder ``%%`` which will be replaced with the remaining time in seconds. See [Time Limits](timelimits.md) for how to use the countdown.
  
 ### ``indicate_points``
 * ``"none"``: No point indicators are shown when an item is collected
@@ -32,7 +30,16 @@ This file documents the entries in the config file, explaning what they mean and
 
 
 ## patch_types 
-(list of items with the following entries)
+(list of items that can have the following entries)
+
+### ``travel_time``
+* A time in milliseconds that it taked to change into the next patch
+
+### ``timeout``
+* A time in millisconds, after which the trials termiantes automatically; Set to ``null``or delete entry for no timeout.
+
+### ``point_goal``
+* Number of points to be reached within a trial after which the trial terminates; Set to ``null``or delete entry for no timeout. 
 
 ### ``sound_events``
 * List of form ``[{time : 0, sound  : 'tone.mp3', loop: true}, 

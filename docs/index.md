@@ -8,7 +8,7 @@
 
 * There is a [Config Entries](configentries.md) overview. The ``config.js`` file is the heart of the ForagingFlipKit. In it, you can descriptively specifiy your experiment (without any real programming). But that means, there is a large list possible entries for all kind of details. Currently, only a small subset is documented. This will be improved soon!
 
-* The "[Before a Patch](before_a_patch.md)"-page explains how you can present instructions or images before the individual patches.
+* The "[Before a Patch](before_a_patch.md)" and "[After a Patch](after_a_patch.md)"-pages explain how you can present instructions or images before the individual patches and record a judgment afterward.
 
 * There is an [Experimental Design](design.md) page explaning how you can achieve intermixed or blocked designs.
 

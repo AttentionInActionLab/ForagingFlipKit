@@ -25,12 +25,39 @@ If you want to display an image before the patch starts, you can use the "pre_tr
     // Further entries go here ....
 ```
  
-In the example above, an image of an apple is diplayed before the trial (don't ask why....). The apple.jpg needs to be located in the "stimuli" folder. A "continue" button terminates the screen to start the patch. 
+In the example above, an image of an apple is displayed before the trial (don't ask why....). The apple.jpg needs to be located in the "stimuli" folder. A "continue" button terminates the screen to start the patch. 
 
 
 If instead you want the screen to stop automatically, you can define a time. In the example below, the image terminates after 3 seconds:
 
 ```javascript
- "pre_trial": {"image": "apple.jpg", "time": 3000},
+"pre_trial": {
+  "image": "apple.jpg",
+  "time": 3000
+},
 ```
+
+If you need to mask your image after a while, you can do it like this:
+
+```javascript
+"pre_trial": {
+   "image": "apple.jpg",
+  "time": 3000,
+  "mask_image": "apple_mask.jpg",
+  "mask_image_time": 3000
+},
+```
+
+If instead of an image you want to show arbitrary HTML, follow this example, that shows three letters and masks them with xs:
+
+```javascript
+"pre_trial": {
+  "html": "A B C",
+  "time": 3000,
+  "mask_html": "X X X",
+  "mask_html_time": 3000
+},
+```
+
+
  

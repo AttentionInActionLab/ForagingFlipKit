@@ -1,40 +1,41 @@
 window.config = {
-  "fullscreen": {
-    "fullscreen_mode": true
-  },
+  "fullscreen": true,
+  
+  // These are some general settings of the patch display. 
+  // If you don't need the points displays or a next button you can just delete their lines
   "patch": {
-    "size": [
-      1920,
-      1080
-    ],
-    "indicate_points": "both",
-    "point_indicator_html": "<div id='point-indicator-html' class='point-indicator'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>%%</font></div>",
-    "points_display_html": "<div id='points-display-html' class='points-display'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Points: %% </font></div>",
-    "next_patch_click_html": "<div id='next-patch-click-html' class='next-click' style='z-index: 99999'><font size='+4' face='Comic Sans MS' color='#FFFFFF' style='position:absolute; left:-40px'>Next</font></div>",
-"countdown_html":   "<div id='countdown-html' class='countdown-display' style='left: 700px!'><font size=+4 face='Comic Sans MS' color='#FFFFFF'>Time left: %%s</font></div>",
+    "size": [1920, 1080],               // This is the reference resolution
+    "indicate_points": "both",          // Show negative, positive, or both points floating up (or none)
+    "point_indicator_html": "%%",       // The points that float up when an element is clicked
+    "points_display_html": "Points: %%",// The points displayed on the upper left of the screen
+    "next_patch_click_html": "Next",    // The "next" patch button
   },
   
-  "points": {
-    "max_points": 20
-  },
+  // After reachting max_points, the experiment terminates. If you don't want a limit, delete this line
+  "max_points": 5,  
+  
+  // When to show feedback and what to say
   "feedback": {
     "enabled": true,
     "every_n_patches": 3,
-    "text": "Sie haben {{points}} von {{max_points}} Punkten gesammelt.<br>Aktuelle Rate: {{rate}} Punkte/Minute."
+    "text": "You have collected {{points}} of {{max_points}} points!<br>Current Rate: {{rate}} Points/Minute."
   },
+  
+  // Positions of the elements on the screen
   "grid": {
     "columns": 10,
     "rows": 8,
-    "hspacing": 180,
+    "hspacing": 180, // Space between elements
     "vspacing": 180,
-    "hjitter": 40,
+    "hjitter": 40,   // Random jitter
     "vjitter": 40,
-    "hoffset": 45,
+    "hoffset": 45,   // Offset
     "voffset": 45,
   },
-  "animation": {
-    "speed":30
-  },
+  
+  // How quick the stimuli move. Set to 0 for static
+  "movement_speed": 30,
+  
   "patch_types": [
     {
       "id": "A",

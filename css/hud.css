@@ -1,0 +1,36 @@
+.next-click {
+  font-size: 40px;
+  font-family: "Arial";
+  color: white;
+  position: absolute;
+  left: 1780px;
+  top: 8px;
+  z-index: 99999999;
+}
+
+.points-display {
+  font-size: 40px;
+  font-family: "Arial";
+  color: white;
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  z-index: 99999999;
+}
+
+.point-indicator {
+  font-size: 40px;
+  font-family: "Arial";
+  color: white;
+  z-index: 99999999;
+}
+
+.countdown-display {
+  font-size: 40px;
+  font-family: "Arial";
+  color: white;
+  position: relative;
+  left: center;
+  top: 8px;
+  z-index: 99999999;
+}
