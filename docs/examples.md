@@ -78,6 +78,7 @@ window.config = {
 ## Example 2: Blocked Design with Two Conditions
 **Concept:** This configuration demonstrates how to group trials into specific sequences (Blocks). Participants will complete four trials of Condition A (Squares), followed by four trials of Condition B (Circles).
 
+```javascript
 window.config = {
   "fullscreen": { "fullscreen_mode": true },
   "patch": {
