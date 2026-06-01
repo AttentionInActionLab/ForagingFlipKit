@@ -18,5 +18,6 @@ nav:
   - Config Entries: configentries.md
   - Experimental Design: design.md
   - Before a Patch: before_a_patch.md
+  - After a Patch: after_a_patch.md
   - Time Limits: timelimits.md
   - Audio: audio.md
