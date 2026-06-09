@@ -71,12 +71,3 @@ If "selection_method" is set to "participant", the paticipant number will be use
 If "selection_method" is set to "random" a random sequence is picked for every participant.
 
 If you set "show_condition_intro" to first "first_in_block", the "intro" string defined in the patch type is only shown for the first of a block of same-type trials. E.g., here only the first, fifth, nineth, and thirteenth trial would be preceeded by the intro.
-
- # Interaction with Practice and Breaks
-
-When designing your experimental blocks, keep in mind how they interact with the practice sessions and rest periods:
-
-* **Practice First:** If `practice` is enabled, the practice sequence will always run completely *before* the main sequences defined above begin.
-* **Automated Breaks:** If you set `"show_between_blocks": true` in your break settings, the system will detect transitions in your sequence (e.g., the jump from `A` to `B` in `"AAAABBBBAAAA"`) and automatically insert a rest screen for the participant at that exact moment.
-
-For a detailed guide on how to inject a practice phase and configure self-paced or timed rest screens between these blocks, please head over to the [Blocks and Breaks](Blocks-and-Breaks.md) section.
