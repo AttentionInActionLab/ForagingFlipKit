@@ -1,6 +1,6 @@
 # Terminating a patch
 
-There is a large number of different options concerning how a patch is terminated. Most of them can be combined. When a patch is terminated, foragers are transferred into the next patch.
+There are several different options concerning how a patch is terminated. Most of them can be combined. When a patch is terminated, foragers are transferred into the next patch.
 
 ## Terminating by actively leaving a patch:
 If you define a "next patch link" as shown below, foragers can actively leave the patch by clicking it.
