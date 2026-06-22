@@ -30,7 +30,7 @@ However, for creating contextual-cueing-style experiments, the random position g
 For each set of elements, you can set "positions" to "novel" (random in each trial) or "repeated" (the same within each trial, but random across partiipants) or "repeated-1", "repeated-2", "repeated-3", "repeated-4" to access up to four different "repeated" positions.
 
 
-### Example: Creating a contectual cuing experiment
+### Example: Creating a contextual cuing experiment
 
 
 Here is an example with three patch types: A (repeated-1), B (repeated-2), X (novel)
