@@ -1,14 +1,16 @@
-# Before a Patch
+# Before/after a Patch
 
-This page describes events that can occur before a patch is started!
+This page describes events that can occur before a patch is started or after it has ended!
 
-## Instructions before the patch starts
+## Before a Patch
+
+### Instructions before the patch starts
 
 This can be achieved via the "intro" attribute of a patch type.
 
 TODO: A better explanation will follow!
 
-## Images before the patch starts
+### Images before the patch starts
 
 ![Screenshot with an apple](screenshots/screenshot-pre-trial-image.jpg)
 
@@ -58,6 +60,22 @@ If instead of an image you want to show arbitrary HTML, follow this example, tha
   "mask_html_time": 3000
 },
 ```
+## After a patch 
 
+If you want to record a judgment right after a patch, you can add a post_trial attribute to the patch_type:  
 
- 
+```javascript
+"patch_types": [
+  {
+    "id": "A",
+    "name": "ConditionA",
+    "background_color": "#0A00AA",
+    "intro": "<p>Welcome!</p>",
+    "post_trial": {
+      "html": "Who did this make you feel?",
+      "choices": ["Good", "Bad", "I want to sleep now"]
+     },
+    // Further entries go here ....
+```
+
+This will show some buttons. Note that you can also use something like "<img src='stimuli/some_image.png'>" inside the choices to put images on the buttons.

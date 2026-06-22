@@ -8,6 +8,27 @@ This file documents the entries in the config file, explaning what they mean and
 * true: Shows the fullscreen dialog, after consent and instruction screens
 * false: Disables the fullscreen dialog.
 
+## grid
+
+Defines the potential locations on the screen in form of a stimulus grid with the following properties:
+
+### ``columns``
+* Number of colums
+###    ``rows``
+* Number of rows
+### ``hspacing``
+* Horizontal distance between the positions in pixels of the reference resolution
+### ``vspacing``
+* Vertical distance between the positions in pixels of the reference resolution
+### ``hjitter``
+* Random horizontal jitter in pixels of the reference resolution from -hjitter/2 to +hjitter/2 
+### ``vjitter``
+* Random vertical jitter in pixels of the reference resolution from -vjitter/2 to +vjitter/2 
+### ``hoffset``
+* Horizontal offset in pixels of the reference resolution; moves all positions horizontally
+### ``voffset``
+* Vertical offset in pixels of the reference resolution; moves all positions vertically
+
 ## patch
 ### ``size``
 * ``[X, Y]``: ``X`` is the width and ``Y`` is the height; This is the reference resolution. The real resolution might differ as the display is always scaled to the full screen size
@@ -38,8 +59,8 @@ This file documents the entries in the config file, explaning what they mean and
 ### ``timeout``
 * A time in millisconds, after which the trials termiantes automatically; Set to ``null``or delete entry for no timeout.
 
-### ``point_goal``
-* Number of points to be reached within a trial after which the trial terminates; Set to ``null``or delete entry for no timeout. 
+### ``points_goal``
+* Number of points to be reached within a trial after which the trial terminates; Set to ``null``or delete entry for no point goal. 
 
 ### ``sound_events``
 * List of form ``[{time : 0, sound  : 'tone.mp3', loop: true}, 
@@ -49,27 +70,37 @@ This file documents the entries in the config file, explaning what they mean and
 ### ``elements``
 (list of items with the following entries)
 
-### ``role``
+#### ``role``
 * ``"target"``
 * ``"distractor"``
-### ``amount``
+#### ``amount``
 * An integer number that defines how many items of this type will be instantiated
-### ``points``
+#### ``points``
 * An integer number (positive or negative) of points to be added when the item is collected.
 
-### ``images``
+#### ``images``
 * A list of the form ``["disk-green.svg", "disk-yellow.svg", /* potentially more entries */]`` with filenames of image files located in the "stimulus" folder. When an element is instantiated, a images are picked randomly (but in a balanced fashion) from this list.
 
-### ``click_sounds``
+#### ``click_sounds``
 * A list of the form ``["error1.mp3", "error2.mp3", /* potentially more entries */]`` with filenames of audio files located in the "stimulus" folder. When an item is clicked, a random sound of the ones from the list is played. See [Audio](audio.md) for more info.
 
-### ``collectible``
-* ``true``: The item is removed from the screen when clicked.
+#### ``collectible``
+* ``true`` [default]: The item is removed from the screen when clicked.
 * ``false``: The item remains on the screen when clicked.
 
-### ``trial_ends_when_all_collected``
+#### ``trial_ends_when_all_collected``
 * ``true``: When all items that have this attribute set to true are collected, the trial is ended.
-* ``false``: Collecting all of these items does not affect trial termination 
+* ``false`` [default]: Collecting all of these items does not affect trial termination.
+
+#### ``trial_ends_when_one_collected``
+* ``true``: When one items that has this attribute set to true is collected, the trial is ended.
+* ``false`` [default]: The trial is not ended as soon as one item with this attribute is collected.
+
+#### ``stimulus_positions``
+* ``"novel"``: Each trial, stimuli are placed randomly on the grid
+* ``"repeated-x"``: The random locations of this type will be generated once per participant. All patches will have the same distribution. ``x``can be 1 to 4, for four different random (but fixed per participant) random positions. [Stimulus Positions](stimulus_positions.md).
+
+
 
 ## blocks
 ### ``enabled``

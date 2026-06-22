@@ -15,9 +15,10 @@ theme:
 nav:
   - Home: index.md
   - Quick Start: quickstart.md
+  - Terminating a Patch: terminating_a_patch.md
   - Config Entries: configentries.md
   - Experimental Design: design.md
-  - Before a Patch: before_a_patch.md
-  - After a Patch: after_a_patch.md
   - Time Limits: timelimits.md
   - Audio: audio.md
+  - Before/after a Patch: before_after_a_patch.md
+  - Before/after main task: before_after_main_task.md
