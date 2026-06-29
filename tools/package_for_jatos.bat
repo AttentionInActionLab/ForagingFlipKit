@@ -1,49 +1,62 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Create timestamp (YYYYMMDD-HHMMSS)
+REM Experiment name (parent folder):
+for %%I in ("%CD%\..") do set EXP=%%~nxI
+echo Experiment name: %EXP%
+
+REM Timestamp:
 for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMdd-HHmmss"') do set TS=%%i
 
-REM Target output directory
+REM Output directory:
 set OUTDIR=%CD%\..\packaged
 if not exist "%OUTDIR%" mkdir "%OUTDIR%"
 
-REM Create temp directory
+REM Temp directory:
 set TMPDIR=%TEMP%\experiment_%RANDOM%
 mkdir "%TMPDIR%"
-
 echo Temp directory: %TMPDIR%
 
-REM Create folder structure
-mkdir "%TMPDIR%\ffk"
-mkdir "%TMPDIR%\ffk\stimuli"
-mkdir "%TMPDIR%\ffk\core"
-mkdir "%TMPDIR%\ffk\css"
+REM Create folder structure:
+mkdir "%TMPDIR%\%EXP%"
+mkdir "%TMPDIR%\%EXP%\stimuli"
+mkdir "%TMPDIR%\%EXP%\core"
+mkdir "%TMPDIR%\%EXP%\css"
 
-REM Copy main file
-copy "..\misc\ffk.jas" "%TMPDIR%\" >nul
+REM Make .jas custom:
+set PS1=%TMPDIR%\patch_jas.ps1
+> "%PS1%" echo $obj = Get-Content '..\misc\ffk.jas' -Raw ^| ConvertFrom-Json
+>>"%PS1%" echo $obj.data.dirName = "%EXP%"
+>>"%PS1%" echo $obj.data.title = "%EXP%"
+>>"%PS1%" echo $json = $obj ^| ConvertTo-Json -Depth 100
+>>"%PS1%" echo [System.IO.File]::WriteAllText("%TMPDIR%\%EXP%.jas", $json, (New-Object System.Text.UTF8Encoding($false)))
+powershell -NoProfile -ExecutionPolicy Bypass -File "%PS1%"
 
-REM Copy required files into ffk
-copy "..\start-experiment.html" "%TMPDIR%\ffk\" >nul
-copy "..\config.js" "%TMPDIR%\ffk\" >nul
 
-REM Optional files
-if exist "..\consent.pdf" copy "..\consent.pdf" "%TMPDIR%\ffk\" >nul
-if exist "..\instructions.pdf" copy "..\instructions.pdf" "%TMPDIR%\ffk\" >nul
+REM Copy experiment files:
+copy "..\start-experiment.html" "%TMPDIR%\%EXP%\" >nul
+copy "..\config.js" "%TMPDIR%\%EXP%\" >nul
+if exist "..\consent.pdf" copy "..\consent.pdf" "%TMPDIR%\%EXP%\" >nul
+if exist "..\instructions.pdf" copy "..\instructions.pdf" "%TMPDIR%\%EXP%\" >nul
+xcopy "..\stimuli\*" "%TMPDIR%\%EXP%\stimuli\" /E /I /Y >nul
+xcopy "..\core\*" "%TMPDIR%\%EXP%\core\" /E /I /Y >nul
+xcopy "..\css\*" "%TMPDIR%\%EXP%\css\" /E /I /Y >nul
 
-REM Copy folders
-xcopy "..\stimuli\*" "%TMPDIR%\ffk\stimuli\" /E /I /Y >nul
-xcopy "..\core\*" "%TMPDIR%\ffk\core\" /E /I /Y >nul
-xcopy "..\css\*" "%TMPDIR%\ffk\css\" /E /I /Y >nul
+REM Make package:
+set ZIPBASE=%EXP%-%TS%
+set ZIPFILE=%OUTDIR%\%ZIPBASE%.zip
+set JZIPFILE=%OUTDIR%\%ZIPBASE%.jzip
+tar -a -c -f "%ZIPFILE%" -C "%TMPDIR%" %EXP% %EXP%.jas
+ren "%ZIPFILE%" "%ZIPBASE%.jzip"
 
-REM Create archive in packaged folder
-set ZIPNAME=ffk-%TS%.jzip
-powershell -NoProfile -Command "Compress-Archive -Path '%TMPDIR%\*' -DestinationPath '%OUTDIR%\%ZIPNAME%'"
+echo.
+echo =========================
+echo DONE
+echo Archive created:
+echo %JZIPFILE%
+echo =========================
 
-echo Done!
-echo Archive created: %OUTDIR%\%ZIPNAME%
-
-REM Cleanup
+REM Cleanup:
 rmdir /S /Q "%TMPDIR%"
 
 endlocal
