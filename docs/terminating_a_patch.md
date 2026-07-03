@@ -11,7 +11,7 @@ If you define a "next patch link" as shown below, foragers can actively leave th
   },
 ```
 
-## Terminating by collecting all targets
+## Terminating by collecting all targets:
 If you set "trial_ends_when_all_collected: true" for a certain type of elements, then the trials ends when all of this type (and others that have the setting) are collected. Using this, you can implement exhaustive foraging. The example below requires collecting all targets but distractors don't matter:
 
 ```javascript
@@ -36,7 +36,7 @@ patch_types: [{
     //(further patch types)
 ```
 
-## Terminating when an error is made
+## Terminating when an error is made:
 
 If you set "trial_ends_one_collected: true" for a certain type of elements, then the trials ends when a single element of this type (and others that have the setting) is collected. Using this, you can implement ending trials whe an error is made. We extend the example from above like this:
 
