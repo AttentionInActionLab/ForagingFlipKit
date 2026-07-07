@@ -485,11 +485,11 @@ async function createCSV(){
         let role, type, supplementaryImage = null;
         if(legacyMode){
           role = sel.type ?? "";
-          type = sel.actual_image ? sel.actual_image.replace(/^.*[\\/]/,"") : "";
+          type = sel.image ? sel.image.replace(/^.*[\\/]/,"") : "";
         } else {
           role = sel.role ?? "";
           type = sel.type ?? "";
-          supplementaryImage = sel.actual_image ? sel.actual_image.replace(/^.*[\\/]/,"") : "";
+          supplementaryImage = sel.image ? sel.image.replace(/^.*[\\/]/,"") : "";
         }
 
         let row = {
