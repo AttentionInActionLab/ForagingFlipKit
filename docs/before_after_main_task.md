@@ -10,8 +10,7 @@ The most commone use case it probably a questionnaire before or after the experi
 "before_main_task": [{
     // A short introductory text could be placed here.
     type: "html-button-response",
-    stimulus: <h2>Please answer a few questions first</h2>.
-                 <br><br><p>Any HTML text can be placed here</p,
+    stimulus: "<h2>Please answer a few questions first</h2>. <br><br><p>Any HTML text can be placed here</p>",
     choices: ["Next"]
   },
   { // The first page starts here
