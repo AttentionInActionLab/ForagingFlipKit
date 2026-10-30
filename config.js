@@ -1,35 +1,27 @@
 window.config = {
   fullscreen: true,
   
-  // These are some general settings of the patch display. 
-  // If you don't need the points displays or a next button you can just delete their lines
+  // These are some general settings of the patch display.
   patch: {
-    size: [1920, 1080],               // This is the reference resolution
-    indicate_points: "both",          // Show negative, positive, or both points floating up (or none)
-    point_indicator_html: "%%",       // The points that float up when an element is clicked
-    points_display_html: "Points: %%",// The points displayed on the upper left of the screen
-    next_patch_click_html: "Next",    // The "next" patch button
+    size: [1920, 1080],
+    indicate_points: "both",
+    point_indicator_html: "%%",
+    points_display_html: "Points: %%",
+    next_patch_click_html: "Next",
   },
   
-  // After reaching max_points, the experiment terminates. If you don't want a limit, delete this line
-  max_points: 50,  
-  
-  // When to show feedback and what to say
-  feedback: {
-    enabled: true,
-    every_n_patches: 2,
-    text: "You have collected {{points}} of {{max_points}} points!<br>Current Rate: {{rate}} Points/Minute."
-  },
+  // After reaching max_points, the experiment terminates.
+  max_points: 50,
   
   // Positions of the elements on the screen
   grid: {
     columns: 10,
     rows: 8,
-    hspacing: 180, // Space between elements
+    hspacing: 180,
     vspacing: 180,
-    hjitter: 40,   // Random jitter
+    hjitter: 40,
     vjitter: 40,
-    hoffset: 45,   // Offset
+    hoffset: 45,
     voffset: 45,
   },
   
@@ -84,20 +76,28 @@ window.config = {
       ]
     }
   ],
-  blocks: {
-    enabled: true,
+
+  design: {
     sequences: [
       "ABAB",
       "BABA"
     ],
     selection_method: "participant",
-    show_condition_intro: "never"
+
+    // Show a feedback screen every 2 patches
+    inter_trial_screen: {
+      every_n_patches: 2,
+      html: "You have collected {{points}} of {{max_points}} points!<br>Current Rate: {{rate}} Points/Minute.",
+      button_text: "Continue"
+    }
   },
+
   data: {
     mode: "offline"
   },
+
   pre_experiment: {
-    skip_all : false,
+    skip_all: false,
     consent: true,
     instructions: true,
   }
